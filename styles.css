@@ -1,0 +1,116 @@
+/* General modal styling */
+.modal {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden; /* Ensures no content overflows */
+}
+
+/* Header for dragging */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f6f6f6;
+    cursor: move;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Align minimize and close buttons side by side */
+.header-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.drag-handle {
+    font-weight: bold;
+}
+
+.close, .minimize {
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+}
+
+/* Modal content */
+.modal-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box; /* Ensures padding is within boundaries */
+}
+
+.to-field, .subject-field, .message-body {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding is within boundaries */
+}
+
+.message-body {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer for action buttons */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.save-draft, .send {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-draft {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.send {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Minimized state styling */
+.modal.minimized {
+    width: 200px;
+    height: auto;
+    bottom: 10px;
+    left: 10px;
+    right: auto;
+    top: auto;
+    transform: none;
+    position: fixed;
+    cursor: pointer;
+}
+
+/* Hide content and footer when minimized */
+.modal.minimized .modal-content,
+.modal.minimized .modal-footer {
+    display: none;
+}
+
+/* Stack minimized composers horizontally */
+.modal.minimized + .modal.minimized {
+    margin-left: 210px; /* Add space between minimized composers */
+}

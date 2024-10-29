@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtonMail-style Composer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="openComposer">New Message</button>
+
+    <!-- Composer Template -->
+    <div id="composerTemplate" class="composer modal" style="display: none;">
+        <div class="modal-header">
+            <span class="drag-handle">New Message</span>
+            <div class="header-buttons">
+                <button class="minimize">_</button>
+                <button class="close">&times;</button>
+            </div>
+        </div>
+        <form class="modal-content">
+            <input type="text" placeholder="To:" class="to-field" required>
+            <input type="text" placeholder="Subject" class="subject-field">
+            <textarea placeholder="Write your message..." class="message-body"></textarea>
+            <div class="modal-footer">
+                <button type="button" class="save-draft">Save Draft</button>
+                <button type="submit" class="send">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
