@@ -1,0 +1,1 @@
+Protomail like composer window
